@@ -21,6 +21,14 @@ const TextSpan = styled.span`
   padding: 0 5px;
 `
 
+const KingSpan = styled.span`
+font-size: 14px;
+font-style: italic;
+float: right;
+color: var(--cFont);
+padding: 0 5px;
+`
+
 const TextDiv = styled.div`
   text-align: ${props => props.textAlign};
   float: ${props => props.align || 'none'};
@@ -71,6 +79,6 @@ const StyledHyperLink = styled.a`
 `
 
 export {
-  Title, Subtitle, TextSpan, TextDiv, WinnerSpan, BattleLabel,
+  Title, Subtitle, TextSpan, KingSpan, TextDiv, WinnerSpan, BattleLabel,
   FiltersBlock, FiltersSpan, StyledHyperLink,
 }

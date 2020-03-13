@@ -4,8 +4,9 @@ import {
   computeWinRatio,
   generateMatchRatingChanges,
   plotRatingHistory,
+  computeKingStreakDuration,
 } from './matches-computations'
-import { getPlayer } from '../players/players-selectors'
+import { getPlayer, getTopRatedPlayers } from '../players/players-selectors'
 
 const fillPlayers = (team, state) => team.map(emptyPlayer => {
   const player = state.players.find(player => player.id === emptyPlayer.id)
@@ -43,6 +44,12 @@ const generateStatisticsForPlayer = (playerId, playerMatches) => ({
   winRatio: computeWinRatio(playerId, playerMatches),
   totalMatches: playerMatches.length,
 })
+
+export const getKing = createSelector(
+  getLastMatches,
+  getTopRatedPlayers,
+  (userMatches, users) => computeKingStreakDuration(userMatches, users)
+)
 
 export const getStatisticsForPlayer = createSelector(
   getLastMatchesForPlayer,
