@@ -18,7 +18,7 @@ function* addPlayerSaga(action) {
     const state = yield select()
     yield put(PlayersActions.Creators.updateStatus(inProgress))
     yield call(addPlayer, state.selectedGame.name, action.player)
-    yield call(getPlayersSaga)
+    yield put(PlayersActions.Creators.playerAdded())
     yield put(PlayersActions.Creators.updateStatus(success))
   } catch (error) {
     console.error(error)

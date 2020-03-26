@@ -26,8 +26,6 @@ export function* addMatchSaga(action) {
     yield put(MatchesActions.Creators.updateStatus(inProgress))
     yield call(addMatch, selectedGame.name, action.match)
     yield put(MatchesActions.Creators.matchAdded(action.match))
-    // Need to reload players because ratings have changed
-    yield call(getPlayersSaga)
     yield put(MatchesActions.Creators.updateStatus(success))
   } catch (error) {
     console.error(error)

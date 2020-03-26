@@ -50,7 +50,6 @@ describe('matchesSaga', () => {
           .toBe(put(MatchesActions.Creators.updateStatus(inProgress)))
         expectNextUndoneValue().toBe(call(addMatch, FOOSBALL.name, MATCH))
         expectNextUndoneValue().toBe(put(MatchesActions.Creators.matchAdded(MATCH)))
-        expectNextUndoneValue().toBe(call(getPlayersSaga))
         expectNextUndoneValue().toBe(put(MatchesActions.Creators.updateStatus(success)))
         expectNextDone()
       })
