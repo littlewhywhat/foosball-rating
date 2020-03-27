@@ -48,7 +48,7 @@ const generateStatisticsForPlayer = (playerId, playerMatches) => ({
 export const getKing = createSelector(
   getLastMatches,
   getTopRatedPlayers,
-  (userMatches, users) => computeKingStreakDuration(userMatches, users)
+  (playerMatches, players) => computeKingStreakDuration(playerMatches, players),
 )
 
 export const getStatisticsForPlayer = createSelector(
