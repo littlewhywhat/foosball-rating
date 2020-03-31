@@ -1,5 +1,5 @@
 import * as express from 'express'
-import { Response, Request } from 'express'
+import { NextFunction, Response, Request } from 'express'
 import * as bodyParser from 'body-parser'
 
 import * as storage from './storage/Storage'
@@ -11,6 +11,7 @@ import { makeBot, SingleChannelBot } from './bot/bot-factory'
 
 import { MatchReporter } from './match-reporter/MatchReporter'
 import { MatchDescription } from './types/MatchDescription'
+import { InputError } from './errors/InputError'
 
 const jsonParser = bodyParser.json()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -18,7 +19,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express()
 const port = 3000
 
-const addCrossDomainHeaders = function(req, res, next): void {
+const addCrossDomainHeaders = function(req: Request, res: Response, next: NextFunction): void {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   res.header('Access-Control-Allow-Headers', 'Content-Type')
@@ -29,7 +30,7 @@ app.use(addCrossDomainHeaders)
 app.use(urlencodedParser)
 app.use(jsonParser)
 
-let matchReporter
+let matchReporter: MatchReporter
 makeBot(process.env.FOOSBOT_TOKEN, process.env.FOOS_CHANNEL_NAME)
   .then((bot: SingleChannelBot) => {
     matchReporter = new MatchReporter(bot, process.env.MATCH_REPORT_PREFIX_SUFFIX_CONFIG)
@@ -37,7 +38,7 @@ makeBot(process.env.FOOSBOT_TOKEN, process.env.FOOS_CHANNEL_NAME)
   })
   .catch(error => console.warn('Slackbot initialization failed:', error.message))
 
-const processError = (response, error): void => {
+const processError = (response: Response, error: InputError): void => {
   console.error(error)
   response.statusCode = error.httpStatusCode || 500
   response.send(error.message)
