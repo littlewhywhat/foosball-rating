@@ -26,9 +26,16 @@ exports[`AppComponent when game is not selected but could be found renders heade
 </Fragment>
 `;
 
-exports[`AppComponent when game is selected renders button Add Match in the header 1`] = `
+exports[`AppComponent when foosball is selected renders button "Add Match" and game title in the header 1`] = `
 <Fragment>
   <Connect(HeaderComponent)>
+    <styled.h1>
+      <Styled(Link)
+        to="/foosball"
+      >
+        FOOSBALL
+      </Styled(Link)>
+    </styled.h1>
     <styled.button
       onClick={[Function]}
     >
