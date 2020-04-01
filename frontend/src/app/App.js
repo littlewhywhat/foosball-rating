@@ -12,7 +12,7 @@ import { CreateMatchPage } from './pages/CreateMatch'
 import { Profile } from './pages/Profile'
 import { AddPlayerPage } from './pages/AddPlayer'
 import { MatchListPage } from './pages/MatchList'
-import { Button, Subtitle, Title, StyledLink } from '../styles/blocks'
+import { Button, Subtitle, Title, StyledLink, HeaderButton } from '../styles/blocks'
 import { getSelectedGame } from './modules/games/games-selectors'
 import { connect } from 'react-redux'
 
@@ -30,7 +30,7 @@ export class AppComponent extends Component {
             <Title>
               <StyledLink to={url}>{selectedGame.name.toUpperCase()}</StyledLink>
             </Title>
-            <Button onClick={createMatch}>Add Match</Button>
+            <HeaderButton onClick={createMatch}>Add Match</HeaderButton>
           </> : null }
         </Header>
         <Container>

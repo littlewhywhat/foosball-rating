@@ -17,13 +17,27 @@ const Nav = styled.nav`
     font-family: monospace;
     color: var(--cBlack);
     flex: 1;
+    @media (max-width: ${variables.bpMedium}) {
+      font-size: 20px;
+    }
+    @media (max-width: ${variables.bpSmall}) {
+      font-size: 18px;
+    }
+    @media (max-width: 360px) {
+      font-size: 16px;
+    }
   }
   button {
     width: auto;
     background: var(--cTheme);
-    padding: 10px 15px;
     color: var(--cFont);
-    margin: 7px;
+    margin: 5px;
+    @media (max-width: 360px) {
+      margin: 3px;
+    }
+    @media (max-width: 345px) {
+      margin: 3px 3px 3px 0px;
+    }
   }
 `
 

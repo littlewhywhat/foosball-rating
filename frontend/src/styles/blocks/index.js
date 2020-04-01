@@ -5,7 +5,7 @@ import {
 import { Nav, Container, GridContainer, Box, ProfileDetail } from './layout'
 import { ListCon, ListItem } from './list'
 import { StyledLink } from './link'
-import { Button } from './buttons'
+import { Button, IconButton, HeaderButton } from './buttons'
 import { SelectBox, Label, Input } from './inputs'
 import { Logo } from './logo'
 
@@ -15,7 +15,7 @@ export {
   Nav, Container, GridContainer, Box, ProfileDetail,
   ListCon, ListItem,
   StyledLink,
-  Button,
+  Button, IconButton, HeaderButton,
   SelectBox, Label, Input,
   Logo,
 }

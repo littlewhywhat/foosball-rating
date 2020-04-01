@@ -4,18 +4,20 @@ import { connect } from 'react-redux'
 import {
   Logo,
   Nav,
-  Button,
+  IconButton,
   StyledLink,
 } from './../../styles/blocks/'
 import { ThemeActions } from '../modules/theme/theme-actions'
 
 const logo = require('./../../media/logo.png')
+const moon = require('./../../media/moon.svg')
 
 const HeaderComponent = ({ theme, changeTheme, children }) => (
   <Nav>
+    // TODO maybe also logo could be smaller?
     <Logo><StyledLink to={'/'}><img src={logo} alt="logo" /></StyledLink></Logo>
     {children}
-    <Button onClick={() => {changeTheme(theme)}}>Theme</Button>
+    <IconButton onClick={() => {changeTheme(theme)}}><img src={moon}/></IconButton>
   </Nav>
 )
 
