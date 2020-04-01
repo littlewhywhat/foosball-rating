@@ -14,7 +14,7 @@ describe('AppComponent', () => {
     beforeEach(() => {
       appComponent = shallowWithProps(AppComponent, {
         match: { params: { gameName: FOOSBALL_GAME.name } },
-        isGameSelected: false,
+        selectedGame: null,
         gameNotFound: true,
       })
     })
@@ -23,15 +23,15 @@ describe('AppComponent', () => {
     })
   })
 
-  describe('when game is selected', () => {
+  describe('when foosball is selected', () => {
     beforeEach(() => {
       appComponent = shallowWithProps(AppComponent, {
         match: { ...ROUTER_MATCH, url: URLS.FOOSBALL },
-        isGameSelected: true,
+        selectedGame: FOOSBALL_GAME,
         history: HISTORY_MOCK,
       })
     })
-    it('renders button Add Match in the header', () => {
+    it('renders button "Add Match" and game title in the header', () => {
       expect(appComponent).toMatchSnapshot()
     })
     describe('on Add Match button click', () => {
@@ -48,7 +48,7 @@ describe('AppComponent', () => {
     beforeEach(() => {
       appComponent = shallowWithProps(AppComponent, {
         match: { ...ROUTER_MATCH, url: URLS.FOOSBALL },
-        isGameSelected: false,
+        selectedGame: null,
         gameNotFound: false,
       })
     })

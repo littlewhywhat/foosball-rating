@@ -14,8 +14,8 @@ const logo = require('./../../media/logo.png')
 const HeaderComponent = ({ theme, changeTheme, children }) => (
   <Nav>
     <Logo><StyledLink to={'/'}><img src={logo} alt="logo" /></StyledLink></Logo>
-    <Button onClick={() => {changeTheme(theme)}}>Theme</Button>
     {children}
+    <Button onClick={() => {changeTheme(theme)}}>Theme</Button>
   </Nav>
 )
 

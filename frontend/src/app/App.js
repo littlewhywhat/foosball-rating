@@ -12,13 +12,13 @@ import { CreateMatchPage } from './pages/CreateMatch'
 import { Profile } from './pages/Profile'
 import { AddPlayerPage } from './pages/AddPlayer'
 import { MatchListPage } from './pages/MatchList'
-import { Button, Subtitle } from '../styles/blocks'
-import { isGameSelected } from './modules/games/games-selectors'
+import { Button, Subtitle, Title, StyledLink } from '../styles/blocks'
+import { getSelectedGame } from './modules/games/games-selectors'
 import { connect } from 'react-redux'
 
 export class AppComponent extends Component {
   render() {
-    const { match: { url, params: { gameName } }, isGameSelected, gameNotFound } = this.props
+    const { match: { url, params: { gameName } }, selectedGame, gameNotFound } = this.props
     const createMatch = () => {
       this.props.history.push(`${url}${ROUTES.CREATE_MATCH}`)
     }
@@ -26,10 +26,15 @@ export class AppComponent extends Component {
     return (
       <>
         <Header>
-          { isGameSelected? <Button onClick={createMatch}>Add Match</Button> : null }
+          { selectedGame? <>
+            <Title>
+              <StyledLink to={url}>{selectedGame.name.toUpperCase()}</StyledLink>
+            </Title>
+            <Button onClick={createMatch}>Add Match</Button>
+          </> : null }
         </Header>
         <Container>
-          { isGameSelected
+          { selectedGame
             ? <Switch>
               <Route exact path={constructUrl(ROUTES.LEADERBOARD)}>
                 <LeaderboardPage constructUrl={constructUrl} />
@@ -56,7 +61,7 @@ export class AppComponent extends Component {
 }
 
 const mapStateToProps = state => ({
-  isGameSelected: isGameSelected(state),
+  selectedGame: getSelectedGame(state),
   gameNotFound: state.gameNotFound,
 })
 

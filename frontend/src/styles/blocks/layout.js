@@ -7,14 +7,18 @@ const Nav = styled.nav`
   height: 50px;
   background: var(--cYellow);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   h1 {
-    margin-top: 10px;
     background: var(--cYellow);
-    text-align: center;
+    text-align: left;
+    font-family: monospace;
+    color: var(--cBlack);
+    flex: 1;
   }
   button {
-    float: right;
     width: auto;
     background: var(--cTheme);
     padding: 10px 15px;
