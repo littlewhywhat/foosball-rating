@@ -8,15 +8,22 @@ import {
   StyledLink,
 } from './../../styles/blocks/'
 import { ThemeActions } from '../modules/theme/theme-actions'
-
-const logo = require('./../../media/logo-small.png')
-const moon = require('./../../media/moon.svg')
+import Brightness4Icon from '@material-ui/icons/Brightness4'
+import logoSmall from './../../media/logo-small.png'
+import logo from './../../media/logo.png'
 
 const HeaderComponent = ({ theme, changeTheme, children }) => (
   <Nav>
-    <Logo><StyledLink to={'/'}><img src={logo} alt="logo" /></StyledLink></Logo>
+    <Logo>
+      <StyledLink id='smalllogo' to={'/'}>
+        <img src={logoSmall} alt="logo" />
+      </StyledLink>
+      <StyledLink id='largelogo' to={'/'}>
+        <img src={logo} alt="logo" />
+      </StyledLink>
+    </Logo>
     {children}
-    <IconButton onClick={() => {changeTheme(theme)}}><img src={moon}/></IconButton>
+    <IconButton onClick={() => {changeTheme(theme)}}><Brightness4Icon /></IconButton>
   </Nav>
 )
 
