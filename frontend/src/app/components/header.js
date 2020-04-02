@@ -4,30 +4,20 @@ import { connect } from 'react-redux'
 import {
   Logo,
   Nav,
-  IconButton,
-  StyledLink,
+  Button,
 } from './../../styles/blocks/'
 import { ThemeActions } from '../modules/theme/theme-actions'
 import Brightness4Icon from '@material-ui/icons/Brightness4'
 import Brightness7Icon from '@material-ui/icons/Brightness7'
-import logoSmall from './../../media/logo-small.png'
-import logo from './../../media/logo.png'
 import { ThemeTypes } from '../const/theme-types'
 
 const HeaderComponent = ({ theme, changeTheme, children }) => (
   <Nav>
-    <Logo>
-      <StyledLink id='smalllogo' to={'/'}>
-        <img src={logoSmall} alt="logo" />
-      </StyledLink>
-      <StyledLink id='largelogo' to={'/'}>
-        <img src={logo} alt="logo" />
-      </StyledLink>
-    </Logo>
+    <Logo/>
     {children}
-    <IconButton onClick={() => {changeTheme(theme)}}>
+    <Button id="theme" onClick={() => {changeTheme(theme)}}>
       { theme === ThemeTypes.Dark? <Brightness7Icon /> : <Brightness4Icon/> }
-    </IconButton>
+    </Button>
   </Nav>
 )
 

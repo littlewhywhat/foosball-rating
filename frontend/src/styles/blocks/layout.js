@@ -6,7 +6,6 @@ const Nav = styled.nav`
   width: 100%;
   height: 50px;
   background: var(--cYellow);
-  text-align: center;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -20,10 +19,21 @@ const Nav = styled.nav`
     align-items: center;
     font-size: 1.7em;
   }
+  #theme {
+    padding: 8px;
+    display: flex;
+    width: auto;
+    svg {
+      height: 1.6em;
+      width: 1.6em;
+      font-size: inherit;
+    }
+  }
   button {
     background: var(--cTheme);
     color: var(--cFont);
     margin: 5px;
+    font-size: inherit;
   }
 `
 
