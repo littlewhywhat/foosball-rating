@@ -18,11 +18,9 @@ const Nav = styled.nav`
   #title {
     justify-content: start;
     align-items: center;
-    font-size: 1.6em;
-    font-family: monospace;
+    font-size: 1.7em;
   }
   button {
-    width: auto;
     background: var(--cTheme);
     color: var(--cFont);
     margin: 5px;
