@@ -8,7 +8,7 @@ export const Logo = styled.span`
     left: 10px;
 
     @media (max-width: ${variables.bpMedium}) {
-      width: 100px;
+      width: 50px;
       height: auto;
       margin: 5px 0;
     }

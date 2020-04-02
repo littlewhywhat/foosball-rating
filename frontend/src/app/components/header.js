@@ -9,12 +9,11 @@ import {
 } from './../../styles/blocks/'
 import { ThemeActions } from '../modules/theme/theme-actions'
 
-const logo = require('./../../media/logo.png')
+const logo = require('./../../media/logo-small.png')
 const moon = require('./../../media/moon.svg')
 
 const HeaderComponent = ({ theme, changeTheme, children }) => (
   <Nav>
-    // TODO maybe also logo could be smaller?
     <Logo><StyledLink to={'/'}><img src={logo} alt="logo" /></StyledLink></Logo>
     {children}
     <IconButton onClick={() => {changeTheme(theme)}}><img src={moon}/></IconButton>
