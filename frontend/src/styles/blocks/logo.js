@@ -13,15 +13,11 @@ export const Logo = styled.span`
       display: flex
     }
   }
-  img {
-    width: auto;
-    height: 50px;
-    left: 10px;
-
-    @media (max-width: ${variables.bpMedium}) {
-      width: 50px;
-      height: auto;
-      margin: 5px 0;
-    }
+  height: 100%;
+  a,img {
+    height: 100%;
+  }
+  a {
+    padding: 0px;
   }
 `

@@ -8,36 +8,24 @@ const Nav = styled.nav`
   background: var(--cYellow);
   text-align: center;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
 
-  h1 {
-    background: var(--cYellow);
-    text-align: left;
+  font-size: 16px
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+  #title {
+    justify-content: start;
+    align-items: center;
+    font-size: 1.6em;
     font-family: monospace;
-    color: var(--cBlack);
-    flex: 1;
-    @media (max-width: ${variables.bpMedium}) {
-      font-size: 20px;
-    }
-    @media (max-width: ${variables.bpSmall}) {
-      font-size: 18px;
-    }
-    @media (max-width: 360px) {
-      font-size: 16px;
-    }
   }
   button {
     width: auto;
     background: var(--cTheme);
     color: var(--cFont);
     margin: 5px;
-    @media (max-width: 360px) {
-      margin: 3px;
-    }
-    @media (max-width: 345px) {
-      margin: 3px 3px 3px 0px;
-    }
   }
 `
 
@@ -75,6 +63,11 @@ const ProfileDetail = styled.div`
     font-size: ${variables.fontSizeProfileDetails};
     padding: ${variables.baseSpacing};
   }
+`
+
+export const FlexSpan = styled.span`
+  display: flex;
+  flex: 1;
 `
 
 export { Nav, Container, GridContainer, Box, ProfileDetail }

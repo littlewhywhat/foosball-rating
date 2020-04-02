@@ -22,17 +22,17 @@ export const Button = styled.button`
 export const IconButton = styled.button`
   background: var(--cYellow);
   border: none;
-  padding: 6px;
+  padding: 8px;
   border-radius: 8px;
-  width: 100%;
   font-weight: 700;
   color: var(--cFont);
   display: flex;
-
-  @media (min-width: ${variables.bpMedium}) {
-    width: 300px;
+  svg {
+    height: 1.8em;
+    width: auto;
+    font-size: inherit;
   }
-
+  
   &:hover {
     cursor: pointer;
   }
@@ -41,7 +41,8 @@ export const IconButton = styled.button`
 export const HeaderButton = styled.button`
   background: var(--cYellow);
   border: none;
-  padding: 10px 15px;
+  font-size: inherit;
+  padding: 10px;
   border-radius: 8px;
   width: 100%;
   font-weight: 700;
