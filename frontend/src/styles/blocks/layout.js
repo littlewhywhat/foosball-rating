@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { variables } from './../variables'
+import { Header as HeaderComponent } from '../../app/components/header'
 
-const Nav = styled.nav`
+const Header = styled(HeaderComponent)`
   position: fixed;
   width: 100%;
   height: 50px;
@@ -12,6 +13,8 @@ const Nav = styled.nav`
 
   font-size: 16px
   #title {
+    display: flex;
+    flex: 1;
     justify-content: start;
     align-items: center;
     font-size: 1.7em;
@@ -75,9 +78,4 @@ const ProfileDetail = styled.div`
   }
 `
 
-export const FlexSpan = styled.span`
-  display: flex;
-  flex: 1;
-`
-
-export { Nav, Container, GridContainer, Box, ProfileDetail }
+export { Header, Container, GridContainer, Box, ProfileDetail }
