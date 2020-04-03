@@ -13,7 +13,3 @@ export const StyledLink = styled(SimpleLink)`
     font-size: 10px;
   }
 `
-
-export const FlexLink = styled(SimpleLink)`
-  padding: 0px;
-`

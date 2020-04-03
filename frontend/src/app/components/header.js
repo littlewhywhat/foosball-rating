@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import {
   Logo,
   Nav,
-  Button,
+  SimpleButton,
 } from './../../styles/blocks/'
 import { ThemeActions } from '../modules/theme/theme-actions'
 import Brightness4Icon from '@material-ui/icons/Brightness4'
@@ -15,9 +15,9 @@ const HeaderComponent = ({ theme, changeTheme, children }) => (
   <Nav>
     <Logo/>
     {children}
-    <Button id="theme" onClick={() => {changeTheme(theme)}}>
+    <SimpleButton id="theme" onClick={() => {changeTheme(theme)}}>
       { theme === ThemeTypes.Dark? <Brightness7Icon /> : <Brightness4Icon/> }
-    </Button>
+    </SimpleButton>
   </Nav>
 )
 

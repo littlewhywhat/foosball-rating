@@ -34,7 +34,6 @@ const Nav = styled.nav`
     padding: 2px 10px 0px 10px;
     width: auto;
     background: var(--cTheme);
-    color: var(--cFont);
     margin: 5px;
     font-size: inherit;
   }
