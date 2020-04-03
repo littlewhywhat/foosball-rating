@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import * as ROUTES from './const/routes'
+import { Header } from './components/header'
 import { Footer } from './components/Footer/footer'
 import { Container, FlexSpan } from '../styles/blocks/layout'
 // pages
@@ -11,7 +12,7 @@ import { CreateMatchPage } from './pages/CreateMatch'
 import { Profile } from './pages/Profile'
 import { AddPlayerPage } from './pages/AddPlayer'
 import { MatchListPage } from './pages/MatchList'
-import { Header, SimpleButton, Subtitle, SimpleLink } from '../styles/blocks'
+import { SimpleButton, Subtitle, SimpleLink } from '../styles/blocks'
 import { getSelectedGame } from './modules/games/games-selectors'
 import { connect } from 'react-redux'
 
@@ -26,9 +27,9 @@ export class AppComponent extends Component {
       <>
         <Header>
           { selectedGame? <>
-            <span id='title'>
+            <FlexSpan id='title'>
               <SimpleLink to={url}>{selectedGame.name.toUpperCase()}</SimpleLink>
-            </span>
+            </FlexSpan>
             <SimpleButton onClick={createMatch}>Add Match</SimpleButton>
           </> : null }
         </Header>
