@@ -12,7 +12,7 @@ import { CreateMatchPage } from './pages/CreateMatch'
 import { Profile } from './pages/Profile'
 import { AddPlayerPage } from './pages/AddPlayer'
 import { MatchListPage } from './pages/MatchList'
-import { Button, Subtitle, Title, StyledLink, HeaderButton } from '../styles/blocks'
+import { Button, Subtitle } from '../styles/blocks'
 import { getSelectedGame } from './modules/games/games-selectors'
 import { connect } from 'react-redux'
 import { SimpleLink } from '../styles/blocks/link'
@@ -31,7 +31,7 @@ export class AppComponent extends Component {
             <FlexSpan id='title'>
               <SimpleLink to={url}>{selectedGame.name.toUpperCase()}</SimpleLink>
             </FlexSpan>
-            <HeaderButton onClick={createMatch}>Add Match</HeaderButton>
+            <Button onClick={createMatch}>Add Match</Button>
           </> : null }
         </Header>
         <Container>

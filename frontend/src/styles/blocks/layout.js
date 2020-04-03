@@ -11,25 +11,28 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   font-size: 16px
-  @media (max-width: 400px) {
-    font-size: 14px;
-  }
   #title {
     justify-content: start;
     align-items: center;
     font-size: 1.7em;
+    @media (max-width: ${variables.bpSmall}) {
+      font-size: 1.4em;
+    }
+    padding-bottom: 3px;
   }
   #theme {
     padding: 8px;
     display: flex;
     width: auto;
     svg {
-      height: 1.6em;
-      width: 1.6em;
+      height: 1.5em;
+      width: 1.5em;
       font-size: inherit;
     }
   }
   button {
+    padding: 2px 10px 0px 10px;
+    width: auto;
     background: var(--cTheme);
     color: var(--cFont);
     margin: 5px;

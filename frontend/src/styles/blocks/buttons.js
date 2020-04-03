@@ -20,17 +20,16 @@ export const Button = styled(SimpleButton)`
   }
 `
 
-export const IconButton = styled(SimpleButton)`
-  padding: 8px;
-  display: flex;
-  svg {
-    height: 1.8em;
-    width: 1.8em;
-    font-size: inherit;
-  }
-`
+// export const IconButton = styled(SimpleButton)`
+//   padding: 8px;
+//   display: flex;
+//   svg {
+//     height: 1.8em;
+//     width: 1.8em;
+//     font-size: inherit;
+//   }
+// `
 
-export const HeaderButton = styled(SimpleButton)`
-  padding: 10px;
-  font-size: inherit;
-`
+// export const HeaderButton = styled(SimpleButton)`
+//   padding: 10px;
+// `

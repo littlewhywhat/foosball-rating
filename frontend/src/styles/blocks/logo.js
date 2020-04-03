@@ -6,7 +6,7 @@ export const Logo = styled(LogoComponent)`
   #smalllogo {
     display: none
   }
-  @media (max-width: ${variables.bpMedium}) {
+  @media (max-width: ${variables.bpSmall}) {
     #largelogo {
       display: none;
     }
