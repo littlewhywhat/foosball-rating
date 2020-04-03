@@ -12,6 +12,8 @@ const Nav = styled.nav`
 
   font-size: 16px
   #title {
+    display: flex;
+    flex: 1;
     justify-content: start;
     align-items: center;
     font-size: 1.7em;
@@ -73,11 +75,6 @@ const ProfileDetail = styled.div`
     font-size: ${variables.fontSizeProfileDetails};
     padding: ${variables.baseSpacing};
   }
-`
-
-export const FlexSpan = styled.span`
-  display: flex;
-  flex: 1;
 `
 
 export { Nav, Container, GridContainer, Box, ProfileDetail }
